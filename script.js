@@ -13,6 +13,7 @@ let milestone1allow = 1;
 let milestone2allow = 1;
 let milestone3poop = 0;
 let milestone3allow = 1;
+let autoClickInterval;
 
 const poop = document.getElementById("poop");
 const god = document.getElementById("god");
@@ -23,19 +24,25 @@ const poop3 = document.getElementById("poop3");
 const radio3 = document.getElementById("radio3");
 const milestone1 = document.getElementById("milestone1");
 const milestone2 = document.getElementById("milestone2");
-const milestone3 = document.getElementById("milestone3")
+const milestone3 = document.getElementById("milestone3");
 const autoclick1 = document.getElementById("autoclick1");
 const autoclick2 = document.getElementById("autoclick2");
 
 function updateGodText() {
   god.innerText = "You have " + Math.floor(points) + " points";
-  if (points >= 1e6) {god.innerText = "You have " + toExponential(points) + " points";}
+  if (points >= 1e6) {
+    god.innerText = "You have " + points.toExponential(2) + " points";
+  }
+  
   if (points >= 10000 && milestone1allow === 1) {
     milestone1.style.visibility = "visible";
   } 
   if (points >= 1e6 && milestone2poop === 1 && milestone2allow === 1) {
     milestone2.style.visibility = "visible";
-  } if (points >= 1e8 && milestone3poop === 1 && milestone3allow ===1) {milestone3.style.visibility = "visible";}
+  } 
+  if (points >= 1e8 && milestone3poop === 1 && milestone3allow === 1) {
+    milestone3.style.visibility = "visible";
+  }
 } 
 
 function reset() {
@@ -46,12 +53,16 @@ function reset() {
   speed = 1000;
   poop3buy = 0;
   poop3cost = 10;
-  poop.innerText = "Press to get " + pointsAdd + " points";
+  poop.innerText = "Press to get " + (pointsAdd * mM) + " points";
   poop3.innerText = "x2 point gain from Press for one point has 3 levels " + poop3cost + " points";
+  
   radio.style.visibility = "hidden";
   radio2.style.visibility = "hidden";
   radio3.style.visibility = "hidden";
   milestone1.style.visibility = "hidden";
+  milestone2.style.visibility = "hidden";
+  milestone3.style.visibility = "hidden";
+  
   poop2.style.visibility = "visible";
   poop3.style.visibility = "visible";
   updateGodText();
@@ -67,6 +78,14 @@ function startRadioLoop() {
       radio.innerText = "Clicker press to get + points x " + radioBoost + " ^0.91";
     }
   }, speed);
+}
+
+function autoClickRestart() {
+  clearInterval(autoClickInterval); 
+  autoClickInterval = setInterval(() => {
+    points += pointsAdd * mM; 
+    updateGodText();
+  }, autoClickSpeed);
 }
 
 poop.onclick = function() {
@@ -129,39 +148,36 @@ radio3.onclick = function() {
 };
 
 milestone1.onclick = function() { 
+  milestone2poop = 1;
+  milestone1allow = 0;
   reset();
   mM = 2;
   speed = 500;
-  milestone1.style.visibility = "hidden"; 
-  milestone2poop = 1;
-  milestone1allow = 0;
-  updateGodText()
+  poop.innerText = "Press to get " + (pointsAdd * mM) + " points";
+  updateGodText();
 };
 
-let autoClickInterval;
-
-function autoClickRestart() {
-  clearInterval(autoClickInterval); 
-  autoClickInterval = setInterval(() => {
-    points += pointsAdd * mM; 
-    updateGodText();
-  }, autoClickSpeed);
-}
-
 milestone2.onclick = function() {
+  milestone3poop = 1;
+  milestone2allow = 0;
   reset(); 
   mM = 4; 
   speed = 500; 
-  milestone2allow = 0;
-  milestone2.style.visibility = "hidden"; 
+  poop.innerText = "Press to get " + (pointsAdd * mM) + " points";
   autoclick1.style.visibility = "visible"; 
-  autoclick2.style.visibility =
-    "visible";
+  autoclick2.style.visibility = "visible";
   autoClickRestart();
   updateGodText();
 };
 
-milestone3.onclick = function() {reset(); mM *= 3; speed = 500; milestone3allow = 0; milestone3.style.visibility; updateGodText();}
+milestone3.onclick = function() {
+  milestone3allow = 0;
+  reset(); 
+  mM *= 3; 
+  speed = 500; 
+  poop.innerText = "Press to get " + (pointsAdd * mM) + " points";
+  updateGodText();
+};
 
 autoclick1.onclick = function() {
   if (points >= 1e5) {
@@ -173,4 +189,12 @@ autoclick1.onclick = function() {
   }
 };
 
-autoclick2.onclick = function() { if (points >= 2e5){points -= 2e5; autoClickSpeed /= 5; updateGodText(); autoclick2.style.visibility = "hidden"; autoClickRestart();}}
+autoclick2.onclick = function() { 
+  if (points >= 2e5) {
+    points -= 2e5; 
+    autoClickSpeed /= 5; 
+    updateGodText(); 
+    autoclick2.style.visibility = "hidden"; 
+    autoClickRestart();
+  }
+}; //i originally made it on codepen so i forked the code
