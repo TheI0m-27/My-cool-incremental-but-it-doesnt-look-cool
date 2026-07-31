@@ -399,6 +399,8 @@ sPupgrade3.style.visibility = "visible";
 sPupgrade4.style.visibility = "visible";
 sPupgrade5.style.visibility = "visible";
 sPupgrade6.style.visibility = "visible";
+sPupgrade7.style.visibility = "visible";
+sPupgrade8.style.visibility = "visible";
 updateSPdisplay(); updateUpgrade();
 }
 
