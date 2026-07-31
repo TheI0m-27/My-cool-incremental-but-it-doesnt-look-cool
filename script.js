@@ -383,7 +383,7 @@ sPdisplay.innerText = "You have " + sP + " supreme resets";
 let sPointGain = 1;
 let sPGain = 1;
 
-function updateUpgrade() {sPupgrade.innerText = "Current: * " + (sP * 1e6).toExponential(2); sPupgrade2.innerText = "Current: * " + (sP * 1e6).toExponential(2);} 
+function updateUpgrade() {if (updateUpgrade1 === true) {sPupgrade.innerText = "Current: * " + (sP * 1e6).toExponential(2);} if (updateUpgrade2 === true) {sPupgrade2.innerText = "Current: * " + (sP * 1e6).toExponential(2);}} 
 
   
 supremeReset.onclick = function() {
@@ -402,16 +402,19 @@ sPupgrade6.style.visibility = "visible";
 updateSPdisplay(); updateUpgrade();
 }
 
+let updateUpgrade1 = false;
+let updateUpgrade2 = false;
+
 sPupgrade.onclick = function() {
 if (sPoints >= 1) {
-sPoints -= 1;
+sPoints -= 1; updateUpgrade1 = true;
 sPmultiplier = sPmultiplier * (sP * 1e6);
 updateSPoints();
 sPupgrade.innerText = "Current: * " + (sP * 1e6).toExponential(2); sPupgrade.style.visibility = "hidden";
 }
 };
 
-sPupgrade2.onclick = function() {if (sPoints >= 1) {sPoints -= 1; sPmultiplier = sPmultiplier * (sP * 1e6); updateSPoints(); sPupgrade2.innerText = "Current: * " + (sP * 1e6).toExponential(2);}}
+sPupgrade2.onclick = function() {if (sPoints >= 1) {sPoints -= 1; updateUpgrade2 = true; sPmultiplier = sPmultiplier * (sP * 1e6); updateSPoints(); sPupgrade2.innerText = "Current: * " + (sP * 1e6).toExponential(2);}}
 
 sPupgrade3.onclick = function() {if (sPoints >= 3) {sPoints -= 3; updateSPoints(); autoClickMultiplier = 1e6; limit = 5; sPupgrade3.style.visibility = "hidden";}}
 sPupgrade4.onclick = function() {if (sPoints >= 5) {sPoints -= 5; updateSPoints(); limit = 3; sPmultiplier *= 100; sPupgrade4.style.visibility = "hidden";}}
