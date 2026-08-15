@@ -1,114 +1,30 @@
-body {
-  background-color: black;
-}
-
-#god {
-  color: white;
-}
-
-#poop3 {
-  padding: 10px;
-}
-
-#radio {
-  top: 80%;
-  right: 370px;
-  position: absolute;
-  padding: 20px;
-  visibility: hidden;
-}
-
-#radio2 {
-  top: 220px;
-  right: 370px;
-  position: absolute;
-  visibility: hidden;
-}
-
-#radio3 {
-  top: 170px;
-  right: 100px;
-  position: absolute;
-  visibility: hidden;
-}
-
-#milestone1 {
-  width: 450px;
-  position: absolute;
-  top: 480px;
-  right: 80px;
-  height: 50px;
-  visibility: hidden;
-}
-
-#milestone2 {
-  width: 450px;
-  position: absolute;
-  top: 500px;
-  right: 40px;
-  height: 50px;
-  visibility: hidden;
-}
-
-#milestone3 {
-  width: 450px;
-  position: absolute;
-  top: 500px;
-  right: 40px;
-  height: 50px;
-  visibility: hidden;
-}
-
-#milestone4 {
-  width: 450px; 
-  position: absolute; 
-  top: 500px; 
-  right: 40px; 
-  height: 50px; 
-  visibility: hidden;
-}
-
-#milestone5 {
-  width: 450px; 
-  position: absolute; 
-  top: 500px; 
-  right: 40px; 
-  height: 50px;
-  visibility: hidden;
-}
-
-#autoclick1 {
-  top: 300px;
-  left: 20px;
-  position: absolute;
-  padding: 30px;
-  height: 80px;
-  visibility: hidden;
-}
-
-#autoclick2 {
-  top: 400px;
-  left: 20px;
-  position: absolute;
-  padding: 30px;
-  height: 80px;
-  visibility: hidden;
-}
-
-#load {
-  height: 80px; 
-  visibility: hidden;
-}
+body {background-color: black;}
+#god {color: white;}
+#poop3 {padding: 10px;}
+#radio {top: 80%; right: 370px; position: absolute; padding: 20px; visibility: hidden;}
+#radio2 {top: 300px; right: 100px; position: absolute; visibility: hidden;}
+#radio3 {top: 50%; right: 100px; position: absolute; visibility: hidden;}
+#milestone1 {width: 450px; position: absolute; top: 480px; right: 80px; height: 50px; visibility: hidden;}
+#milestone2 {width: 450px; position: absolute; top: 500px; right: 40px; height: 50px; visibility: hidden;}
+#milestone3 {width: 450px; position: absolute; top: 500px; right: 40px; height: 50px; visibility: hidden;}
+#milestone4 {width: 450px; position: absolute; top: 500px; right: 40px; height: 50px; visibility: hidden;}
+#milestone5 {width: 450px; position: absolute; top: 500px; right: 40px; height: 50px; visibility: hidden;}
+#autoclick1 {top: 300px; left: 20px; position: absolute; padding: 30px; height: 80px; visibility: hidden;}
+#autoclick2 {top: 400px; left: 20px; position: absolute; padding: 30px; height: 80px; visibility: hidden;}
+#load {height: 80px; visibility: hidden;}
 #supremeReset {height: 100px; width: 200px; background-color: black; color: red; visibility: hidden;}
-
 #sPdisplay {color: white; visibility: hidden;}
 #sPointsDisplay {color: white; visibility: hidden;}
-#sPupgrade {visibility: hidden; background-color: red; color: black; padding: 20px;}
-#sPupgrade2 {visibility: hidden; background-color: red; color: black; padding: 20px;}
-#sPupgrade3 {visibility: hidden; background-color: red; color: black; padding: 20px;}
-#sPupgrade4 {visibility: hidden; background-color: red; color: black; padding: 20px;}
-#sPupgrade5 {visibility: hidden; background-color: red; color: black; padding: 20px;}
-#sPupgrade6 {visibility: hidden; background-color: red;
-color: black; padding: 20px;}
-#sPupgrade7 {visibility: hidden; background-color: red; color: black; padding: 20px;}
-#sPupgrade8 {visibility: hidden; background-color: red; color: black; padding: 20px;}
+#sPupgrade,#sPupgrade2,#sPupgrade3,#sPupgrade4,#sPupgrade5,#sPupgrade5_5,#sPupgrade6,#sPupgrade7,#sPupgrade8,#sPupgrade9 {visibility: hidden; background-color: red; color: black; padding: 8px; margin: 3px;}
+#sPupgrade9 {background-color: darkviolet;}
+#darkMatter {visibility: hidden; color: darkviolet;}
+#idk {top: 10%; right: 10px; position: absolute; background-color: rgba(100,0,200,1); height: 100px; visibility: hidden;}
+#idk2 {top: 2%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
+#idk3 {top: 12%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
+#idk4 {top: 20%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
+#idk5 {top: 28%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
+#apoints {position: fixed; right: 1px;} /* remove right: 10000px; to add the 1e70 points button */
+#idk6 {top: 37%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
+#idk7 {top: 45%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
+#idk8 {top: 55%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
+#idk9 {top: 60%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(80,0,200,1); height: 50px; visibility: hidden;}
