@@ -23,7 +23,7 @@ body {background-color: black;}
 #idk3 {top: 12%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
 #idk4 {top: 20%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
 #idk5 {top: 28%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
-#apoints {position: fixed; right: 1px;} /* remove right: 10000px; to add the 1e70 points button */
+#apoints {position: fixed; right: 10000px;} /* remove right: 10000px; to add the 1e70 points button */
 #idk6 {top: 37%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
 #idk7 {top: 45%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
 #idk8 {top: 55%; left: 50%; transform: translate(-50%); position: fixed; background-color: rgba(60,0,180,1); height: 50px; visibility: hidden;}
